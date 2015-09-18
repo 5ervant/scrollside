@@ -11,6 +11,11 @@
 		p, table, hr, .box { margin-bottom:25px; }
 		.box p { margin-bottom:10px; }
 	</style>
+	<style type="text/css">
+		img {
+			max-width: 100%;
+		}
+	</style>
 </head>
 
 
@@ -74,27 +79,31 @@
 
 		<h3 id="selectingElements"><strong>B) Selecting Elements</strong> - <a href="#toc">top</a></h3>
 
-		<p>To use this script, your sidebar must have a container and the container must have a parent row that contains the other column.</p>
+		<p>To use this script, your sidebar must have a container and the container must have a parent row that contains the other column(s).</p>
 
 		<p>Lets say we have this page:</p>
 
-		<a href="../jquery/demo.jpg" onclick="window.history.back()"><img src="../jquery/demo.jpg" alt="Demo" style="width: 100%;"></a><br><br>
+		<a href="../jquery/demo.jpg"><img src="../jquery/demo.jpg" alt="Demo"></a><br><br>
 
 		<p>We can try to get our sidebar's row by pointing our mouse to the target sidebar and inspecting its element:</p>
 
-		<a href="../jquery/inspect-element.jpg"><img src="../jquery/inspect-element.jpg" alt="Inspect Element" style="width: 100%;"></a><br><br>
+		<a href="../jquery/inspect-element.jpg"><img src="../jquery/inspect-element.jpg" alt="Inspect Element"></a><br><br>
+
+		<p>Here's the example that you'll see after the previous instruction:</p>
+
+		<a href="../jquery/inspected-element.jpg"><img src="../jquery/inspected-element.jpg" alt="Inspected Element"></a><br><br>
 
 		<p>Try to inspect the element that contains your sidebar's container, main content and other elements if any. In our example the row's selector that we need is <code>.row</code> and we need to keep that but not if you're using Bootstrap.</p>
 
-		<a href="../jquery/inspecting-row.jpg"><img src="../jquery/inspecting-row.jpg" alt="Inspecting Row" style="width: 100%;"></a><br><br>
+		<a href="../jquery/inspecting-row.jpg"><img src="../jquery/inspecting-row.jpg" alt="Inspecting Row"></a><br><br>
 
 		<p>And the most required selector that we need to get is for the container of the sidebar, which in our case is <code>#scrollside</code> and we will need that to call the Scrollside's JavaScript plugin manually with its initializer function:</p>
 
-		<a href="../jquery/inspecting-sidebar-container.jpg"><img src="../jquery/inspecting-sidebar-container.jpg" alt="Inspecting Sidebar Container" style="width: 100%;"></a><br><br>
+		<a href="../jquery/inspecting-sidebar-container.jpg"><img src="../jquery/inspecting-sidebar-container.jpg" alt="Inspecting Sidebar Container"></a><br><br>
 
 		<p>And <code>.blog-sidebar</code> is the selector for our sidebar. Remember that the sidebar must have its own container!</p>
 
-		<a href="../jquery/inspecting-sidebar.jpg"><img src="../jquery/inspecting-sidebar.jpg" alt="Inspecting Sidebar" style="width: 100%;"></a><br><br>
+		<a href="../jquery/inspecting-sidebar.jpg"><img src="../jquery/inspecting-sidebar.jpg" alt="Inspecting Sidebar"></a><br><br>
 
 		<p>The selectors that we get are <code>'.row'</code>, <code>'#scrollside'</code> and <code>'blog-sidebar'</code>.</p>
 
@@ -134,10 +143,6 @@
 			<li>And you need to set <code>mobileWidth</code> to <code>true</code> and the mobile responsiveness of our scrollside will rely on a <code>col-*-*</code> class of your scrollside element.</li>
 		</ol>
 
-		<p>topPadding; // An additional top padding for the sidebar when it's moving.</p>
-
-		<p>topPaddingDecrement; // topPadding decrementation when the viewport have reached the sidebar bottom</p>
-
 		<p>mobileJumpToEnd; // A Boolean indicating whether to complete up scrolling of the sidebar when mobile.</p>
 
 		<table>
@@ -153,7 +158,7 @@
 				<tr>
 					<td>rowSelector</td>
 					<td>string</td>
-					<td style="white-space: nowrap;">'.row'</td>
+					<td>'.row'</td>
 					<td>A <code>.class-name</code>, <code>#id-attribute</code> or any jQuery selector for the parent row of all of the sidebar's container, main content and the other elements if any.</td>
 				</tr>
 				<tr>
@@ -169,16 +174,34 @@
 					<td>The specific document width where the sidebar will scroll back to its initial position.</td>
 				</tr>
 				<tr>
+					<td>mobileAnimate</td>
+					<td>string</td>
+					<td>'auto'</td>
+					<td>Must be <code>'auto'</code>, <code>'css'</code> or <code>'scroll'</code>. Mobile animation will only perform if the desktop view become mobile view. The default <code>'auto'</code> will automatically scroll back the sidebar to its initial position, setting to <code>'css'</code> will automatically move back the sidebar without animation, and <code>'scroll'</code> is just like the <code>'auto'</code> but the animation will only perform when you scroll.</td>
+				</tr>
+				<tr>
 					<td>topPadding</td>
 					<td>number</td>
 					<td>15</td>
-					<td>The top padding of the inner sidebar when it's moving.</td>
+					<td>An additional top padding of the sidebar when it's moving.</td>
 				</tr>
 				<tr>
 					<td>topPaddingDecrement</td>
 					<td>number</td>
 					<td>-15</td>
-					<td>Must be a negative number, it's the <var>topPadding</var> decrementation when the sidebar bottom will going to reach its row bottom.</td>
+					<td>Must be a negative number, it's the <var>topPadding</var> decrementation between the sidebar bottom and the row bottom.</td>
+				</tr>
+				<tr>
+					<td>scrollDuration</td>
+					<td>number or the string <code>'fast'</code> or <code>'slow'<code></td>
+					<td>400</td>
+					<td>Milliseconds to complete the scroll animation per scroll. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of 200 and 600 milliseconds.</td>
+				</tr>
+				<tr>
+					<td>mobileDuration</td>
+					<td>number</td>
+					<td>2000</td>
+					<td>Milliseconds to complete the moving back of the sidebar if the desktop view become mobile view. And will only effect when <var>mobileAnimate</var> is not set to <code>'css'</code>.</td>
 				</tr>
 			</tbody>
 		</table>
