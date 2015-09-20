@@ -51,7 +51,7 @@
 			<li><a href="#gettingStarted">Getting Started</a></li>
 			<li><a href="#selectingElements">Selecting Elements</a></li>
 			<li><a href="#javascript">JavaScript</a></li>
-			<li><a href="#features">Features</a></li>
+			<li><a href="#otherFeatures">Other Features</a></li>
 			<li><a href="#credits">Sources and Credits</a></li>
 		</ol>
 
@@ -79,39 +79,39 @@
 
 		<h3 id="selectingElements"><strong>B) Selecting Elements</strong> - <a href="#toc">top</a></h3>
 
-		<p>To use this script, your sidebar must have a container and the container must have a parent row that contains the other column(s).</p>
+		<p>To use this script, your sidebar must have a container and that container must have a parent row that contains the other column(s).</p>
 
 		<p>Lets say we have this page:</p>
 
 		<a href="../jquery/demo.jpg"><img src="../jquery/demo.jpg" alt="Demo"></a><br><br>
 
-		<p>We can try to get our sidebar's row by pointing our mouse to the target sidebar and inspecting its element:</p>
+		<p>We can get the element of our sidebar's row by starting to point our mouse to the very top content of our target sidebar then click the right mouse button and after that click "Inspect element":</p>
 
 		<a href="../jquery/inspect-element.jpg"><img src="../jquery/inspect-element.jpg" alt="Inspect Element"></a><br><br>
 
-		<p>Here's the example that you'll see after the previous instruction:</p>
+		<p>Here's the example that you'll going to see after the previous instruction:</p>
 
 		<a href="../jquery/inspected-element.jpg"><img src="../jquery/inspected-element.jpg" alt="Inspected Element"></a><br><br>
 
-		<p>Try to inspect the element that contains your sidebar's container, main content and other elements if any. In our example the row's selector that we need is <code>.row</code> and we need to keep that but not if you're using Bootstrap.</p>
+		<p>Now try to point your mouse to the HTML element that contains your sidebar's container, main content and other element(s) if any, and get its unique class or identifier. In our example the row's selector that we've got is <code>.row</code> and we need to keep that but not if you're using Bootstrap grid system.</p>
 
 		<a href="../jquery/inspecting-row.jpg"><img src="../jquery/inspecting-row.jpg" alt="Inspecting Row"></a><br><br>
 
-		<p>And the most required selector that we need to get is for the container of the sidebar, which in our case is <code>#scrollside</code> and we will need that to call the Scrollside's JavaScript plugin manually with its initializer function:</p>
+		<p>And the most required selector that we need to get is for the container of the sidebar, which in our case is <code>#scrollside</code> and we will need that to call the Scrollside's JavaScript plugin manually with its initializer function. To see that you need to point your mouse to the element that contains your sidebar, if your sidebar doesn't have a parent container then you can edit its code and wrap your sidebar's HTML inside of a <code>&lt;div id="identifier"&gt;</code> tag. But in most case, if your sidebar have its inner sidebar, you can make your outer sidebar as your sidebar's container and see if it'll work!</p>
 
 		<a href="../jquery/inspecting-sidebar-container.jpg"><img src="../jquery/inspecting-sidebar-container.jpg" alt="Inspecting Sidebar Container"></a><br><br>
 
-		<p>And <code>.blog-sidebar</code> is the selector for our sidebar. Remember that the sidebar must have its own container!</p>
+		<p>And <code>.blog-sidebar</code> is the selector for the sidebar in this example. Remember that the sidebar must inside its own parent container!</p>
 
 		<a href="../jquery/inspecting-sidebar.jpg"><img src="../jquery/inspecting-sidebar.jpg" alt="Inspecting Sidebar"></a><br><br>
 
-		<p>The selectors that we get are <code>'.row'</code>, <code>'#scrollside'</code> and <code>'blog-sidebar'</code>.</p>
+		<p>The selectors that we got are <code>'.row'</code>, <code>'#scrollside'</code> and <code>'blog-sidebar'</code>. There are many kinds of selectors that we can use to get the elements that we need, the two basic selectors are a class selector that can be preceded with a dot like <code>'.class'</code> and an ID selector that can be preceded with # like <code>'#id'</code>, for more info please visit: <a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a></p>
 
 		<hr>
 
 		<h3 id="javascript"><strong>C) JavaScript</strong> - <a href="#toc">top</a></h3>
 
-		<p>Now if you already got the necessary selectors you can then call the Scrollside plugin via JavaScript like this:</p>
+		<p>Now if you already got the necessary selectors, you can then call the Scrollside plugin via JavaScript like this:</p>
 
 		<pre>		...
 		&lt;!-- Scrollside calls here --&gt;
@@ -126,30 +126,29 @@
 		</pre>
 
 		<ol>
-			<li>We've set <code>.row</code> as <code>rowSelector</code>.</li>
-			<li>We've set <code>767</code> as <code>mobileWidth</code> which means the sidebar's margin top will back to 0 when our browser viewport width become 768 or below and will start scrolling again when the viewport is above 768 of width.</li>
-			<li>We can take the sidebar's selector for granted if the first child of the element of the element that we select which in our case is <code>#scrollside</code>, is have the sidebar as its first child, but anyway you can specify its by providing a specific sidebar's selector.</li>
+			<li>We've selected the <code>#scrollside</code> element as our sidebar's container to call the initializer function.</li>
+			<li>We've set the <code>.row</code> element as our <var>rowSelector</var>.</li>
+			<li>We've set 767 as our <var>mobileWidth</var> which means our sidebar's margin-top will set back to 0 when our browser viewport width become 768 or below and will start scrolling again when the viewport is above 767 of width.</li>
+			<li>And we can take the sidebar's selector for granted if the first child of the <code>#scrollside</code> element that we've selected to call the initializer is the sidebar, but anyway you can specify it by providing a sidebar selector to the <var>sidebarSelector</var> if necessary.</li>
 		</ol>
 
-		<p>If you're using Bootstrap's 12-column grid system, then you can easily call the initializer function like this:</p>
+		<p>If you're using Bootstrap 12-column grid system, then you can easily call the initializer function like this:</p>
 
 		<pre>			$( '#scrollside-bootstrap' ).scrollside( {
 				mobileWidth: true
 			} );
 		</pre>
 
-		<ol>
-			<li>Because the default <code>rowSelector</code> is <code>.row</code> .</li>
-			<li>And you need to set <code>mobileWidth</code> to <code>true</code> and the mobile responsiveness of our scrollside will rely on a <code>col-*-*</code> class of your scrollside element.</li>
-		</ol>
-
-		<p>mobileJumpToEnd; // A Boolean indicating whether to complete up scrolling of the sidebar when mobile.</p>
+		<ul>
+			<li>Because the default <var>rowSelector</var> is already <code>'.row'</code>.</li>
+			<li>You need to set <var>mobileWidth</var> to <code>true</code> to make the mobile responsiveness of your scrollside rely on a predefined <code>col-*-*</code> class of your scrollside element.</li>
+		</ul>
 
 		<table>
 			<thead>
 				<tr>
 					<th>Name</th>
-					<th>Type</th>
+					<th style="width: 13%;">Type</th>
 					<th>Default</th>
 					<th>Description</th>
 				</tr>
@@ -159,7 +158,7 @@
 					<td>rowSelector</td>
 					<td>string</td>
 					<td>'.row'</td>
-					<td>A <code>.class-name</code>, <code>#id-attribute</code> or any jQuery selector for the parent row of all of the sidebar's container, main content and the other elements if any.</td>
+					<td>A <code>.class-name</code>, <code>#id-attribute</code> or any jQuery selector for the parent row of the sidebar's container, main content and other element(s) if any.</td>
 				</tr>
 				<tr>
 					<td>sidebarSelector</td>
@@ -171,13 +170,13 @@
 					<td>mobileWidth</td>
 					<td>number</td>
 					<td>767</td>
-					<td>The specific document width where the sidebar will scroll back to its initial position.</td>
+					<td>The specific document width where the sidebar will set back to its initial position.</td>
 				</tr>
 				<tr>
 					<td>mobileAnimate</td>
 					<td>string</td>
 					<td>'auto'</td>
-					<td>Must be <code>'auto'</code>, <code>'css'</code> or <code>'scroll'</code>. Mobile animation will only perform if the desktop view become mobile view. The default <code>'auto'</code> will automatically scroll back the sidebar to its initial position, setting to <code>'css'</code> will automatically move back the sidebar without animation, and <code>'scroll'</code> is just like the <code>'auto'</code> but the animation will only perform when you scroll.</td>
+					<td>Must be <code>'auto'</code>, <code>'css'</code> or <code>'scroll'</code>. Mobile animation will only perform if the desktop view become mobile view. The default <code>'auto'</code> will automatically scroll back the sidebar to its initial position, setting to <code>'css'</code> will automatically set back the sidebar without animation, and <code>'scroll'</code> is just like the <code>'auto'</code> but the animation will only perform when you scroll.</td>
 				</tr>
 				<tr>
 					<td>topPadding</td>
@@ -193,9 +192,9 @@
 				</tr>
 				<tr>
 					<td>scrollDuration</td>
-					<td>number or the string <code>'fast'</code> or <code>'slow'<code></td>
+					<td>number or the string <code>'fast'</code> or <code>'slow'</code></td>
 					<td>400</td>
-					<td>Milliseconds to complete the scroll animation per scroll. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of 200 and 600 milliseconds.</td>
+					<td>Milliseconds to complete the sidebar animation per scroll. The strings <code>'fast'</code> and <code>'slow'</code> can be supplied to indicate durations of 200 and 600 milliseconds.</td>
 				</tr>
 				<tr>
 					<td>mobileDuration</td>
@@ -206,21 +205,37 @@
 			</tbody>
 		</table>
 
+		<p>Here's how to initializes with complete options:</p>
+
+		<pre>			$( '#scrollside' ).scrollside( {
+				rowSelector: '.main',
+				sidebarSelector: '.sidebar',
+				mobileWidth: 767,
+				mobileAnimate: 'auto',
+				topPadding: 50,
+				topPaddingDecrement: -100,
+				scrollDuration: 300,
+				mobileDuration: 1500
+			} );
+		</pre>
+
 		<hr>
 
-		<h3 id="features"><strong>D) Features</strong> - <a href="#toc">top</a></h3>
+		<h3 id="otherFeatures"><strong>D) Other Features</strong> - <a href="#toc">top</a></h3>
 
-		<p>I've included three psds with this theme:</p>
+		<p>Here are some features that need an overview:</p>
 
 		<ol>
-			<li>The main layout</li>
-			<li>The header</li>
-			<li>The buttons</li>
+			<li>We can use a class selector to select multiple sidebar's containers to be scrollsides such like this:
+				<pre>$( '.sidebar-containers' ).( options )</pre></li>
+			<li>If the height of the row is unexpectedly increasing when the sidebar button is reaching its row botton, then you can try to make the <var>topPaddingDecrement</var> more negatively like this:
+				<pre>
+$( '#scrollside' ).( {
+	topPaddingDecrement: -50,
+	// other options
+} )</pre></li>
+<li>And also, it's Bootstrap 12-column grid system compatible! No need to specify the <var>rowSelector</var>, just set the <var>mobileWidth</var> to <code>true</code> and it will track the class prefix <code>.col-*-</code> of your scrollside as your <var>mobileWidth</var>.</li>
 		</ol>
-
-		<p>If you'd like to change the main image in the header, open "header.psd", make the necessary adjustments, and then save the file as "headerBG.png". Do the same for the buttons.</p>
-
-		<p>Include any more specific information about your psds.</p>
 
 		<hr>
 
