@@ -83,27 +83,27 @@
 
 		<p>Lets say we have this page:</p>
 
-		<a href="../jquery/demo.jpg"><img src="../jquery/demo.jpg" alt="Demo"></a><br><br>
+		<a href="demo.jpg"><img src="demo.jpg" alt="Demo"></a><br><br>
 
 		<p>We can find the element of our sidebar's row by starting to point our mouse to the very top content of our target sidebar then click the right mouse button and after that click "Inspect element":</p>
 
-		<a href="../jquery/inspect-element.jpg"><img src="../jquery/inspect-element.jpg" alt="Inspect Element"></a><br><br>
+		<a href="inspect-element.jpg"><img src="inspect-element.jpg" alt="Inspect Element"></a><br><br>
 
 		<p>Here's the example that you'll going to see after the previous instruction:</p>
 
-		<a href="../jquery/inspected-element.jpg"><img src="../jquery/inspected-element.jpg" alt="Inspected Element"></a><br><br>
+		<a href="inspected-element.jpg"><img src="inspected-element.jpg" alt="Inspected Element"></a><br><br>
 
 		<p>Now try to point your mouse to the HTML element that contains your sidebar's container, main content/element and other element(s) if any, and get its unique class or id. In our example the row's selector that we've got is <code>'.row'</code> and we need to keep that but not necessary if we're using Bootstrap grid system.</p>
 
-		<a href="../jquery/inspecting-row.jpg"><img src="../jquery/inspecting-row.jpg" alt="Inspecting Row"></a><br><br>
+		<a href="inspecting-row.jpg"><img src="inspecting-row.jpg" alt="Inspecting Row"></a><br><br>
 
 		<p>And the most required selector that we need to get is for the container of our sidebar, which in our case is <code>'#scrollside'</code> and we will need that to call the Scrollside's JavaScript plugin with its initializer function. To see that you need to point your mouse to the element that contains your sidebar, if your sidebar doesn't have a parent container then you can edit its code and wrap your sidebar's HTML inside of a <code>&lt;div id="identifier"&gt;SIDEBAR&lt;/div&gt;</code> tag. But in most cases, if your sidebar have an inner sidebar, you can make your outer sidebar as your sidebar's container and its inner as your sidebar and see if it'll work!</p>
 
-		<a href="../jquery/inspecting-sidebar-container.jpg"><img src="../jquery/inspecting-sidebar-container.jpg" alt="Inspecting Sidebar's Container"></a><br><br>
+		<a href="inspecting-sidebar-container.jpg"><img src="inspecting-sidebar-container.jpg" alt="Inspecting Sidebar's Container"></a><br><br>
 
 		<p>And <code>'.blog-sidebar'</code> is the selector for our sidebar in this example. Remember that the sidebar must inside of its own parent container!</p>
 
-		<a href="../jquery/inspecting-sidebar.jpg"><img src="../jquery/inspecting-sidebar.jpg" alt="Inspecting Sidebar"></a><br><br>
+		<a href="inspecting-sidebar.jpg"><img src="inspecting-sidebar.jpg" alt="Inspecting Sidebar"></a><br><br>
 
 		<p>The selectors that we got are <code>'.row'</code>, <code>'#scrollside'</code> and <code>'.blog-sidebar'</code>. There are many kinds of selectors that we can use to get the elements that we need, but the two basic selectors that we used are a class selector that preceded with a dot like <code>'.class'</code> and an ID selector that preceded with # like <code>'#id'</code>, for more info please visit: <a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a></p>
 
