@@ -181,7 +181,7 @@
 
 		<a href="inspected-element.jpg"><img src="inspected-element.jpg" alt="Inspected Element"></a><br><br>
 
-		<p>Now try to point or left click your mouse to the HTML element that contains your sidebar, main content and other column(s) if any, and the easiest is to get its unique identifier, ID attribute or class name. In our example the identifier that we will choose is the ID "main" and we will need to precede it with # because it's an ID attribute, to make it an ID selector like <code><b>#main</b></code> which we will going to input in our <b>"Row selector"</b>.</p>
+		<p>Now try to point or left click your mouse to the HTML element that contains your sidebar, main content and other column(s) if any, and the easiest is to get its unique identifier ID attribute or class name. In our example the identifier that we will choose is the ID "main" and we will need to precede it with # to make it an ID selector like <code><b>#main</b></code> which we will going to input in our <b>"Row selector"</b>.</p>
 
 		<a href="inspecting-row.jpg"><img src="inspecting-row.jpg" alt="Inspecting Row"></a><br><br>
 
@@ -191,20 +191,20 @@
 
 		<p>And because the selector that we've inputed to our "Scrollside selector" is for our sidebar, we will also need to input <code><b>#secondary</b></code> in our <b>"Sidebar selector"</b> where it truly belongs.</p>
 
-		<p>The selectors that we got are <code>#main</code> for our "Row selector" and <code>#secondary</code> for our "Sidebar selector" and for our "Scrollside selector" <b>because</b> we don't have a sidebar's container. There are many kinds of selectors that we can use to select the elements that we need, but the two basic selectors that we can easily used are an ID selector that preceded with # like <code>#id</code> and a class selector that preceded with a dot like <code>.class</code>, for more info please visit: <a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a></p>
+		<p>The selectors that we got are <code>#main</code> for our "Row selector" and <code>#secondary</code> for our "Sidebar selector" and for our "Scrollside selector" BECAUSE we don't have a sidebar's container. There are many kinds of selectors that we can use to select the elements that we need, but the two basic selectors are an ID selector that preceded with # like <code>#id</code> and a class selector that preceded with a dot like <code>.class</code>, for more info please visit: <a href="https://api.jquery.com/category/selectors/">https://api.jquery.com/category/selectors/</a></p>
 
 		<hr>
 
 		<h3 id="otherFeatures"><strong>D) Other Features</strong> - <a href="#toc">top</a></h3>
 
-		<p>Here are some features that need an overview:</p>
+		<p>Here are the details for some features:</p>
 
 		<ul>
 			<li>You can add multiple Scrollside Settings for different sidebars, delete a scrollside or modify it.
 				<a href="scrollside-settings.jpg"><img src="scrollside-settings.jpg" alt="Scrollside Settings"></a></li>
-			<li>In case you have two different sidebars with the same class name in a single row, you can just add a single scrollside for those two sidebar by providing their "Row selector" and a class selector for the "Scrollside selector" and the "Sidebar selector".</li>
-			<li>If the row's height is unexpectedly increasing when the sidebar's bottom is reaching the row's bottom (this may be happened if the sidebar isn't the first child element of the scrollside), then you can try to make the "Top padding decrement" more negatively like -50, -100 or more depends on the added top or bottom margin or padding by your inner or outer sidebar or the other element(s).</li>
-			<li>It's Bootstrap 12-column grid system compatible! Just set the right selectors and set the "Mobile width" to <code>true</code> and the plugin will track the class prefix <code>.col-*-</code> of your scrollside as its mobile width.</li>
+			<li>In case you have two different sidebars with the same class name in a single row, you can just add a single scrollside for those two sidebars by providing their "Row selector" and their class selector(s) for the "Scrollside selector" and the "Sidebar selector".</li>
+			<li>If the row's height is unexpectedly increasing when the sidebar's bottom is reaching the row's bottom (this may happen if the sidebar isn't the first child element of the scrollside), then you can try to make the "Top padding decrement" more negatively like -50, -100 or more depends on the added top or bottom margin or padding from your inner or outer sidebar or from the other element(s).</li>
+			<li>It's Bootstrap 12-column grid system compatible! Just set the right selectors and set the "Mobile width" to <code>true</code> and the plugin will track the class prefix <code>.col-*-</code> of your scrollside to detect the mobile view.</li>
 		</ul>
 
 		<hr>
