@@ -459,7 +459,7 @@ header h1 {
   width: 540px;
   margin-top: 0;
   margin-bottom: 0.2em;
-  font-size: 72px;
+  font-size: 42px; /*Default 72px*/
   font-weight: normal;
   line-height: 1;
   color: #fff;
@@ -535,6 +535,15 @@ header a.button {
   top: 0;
   right: 0;
   background: transparent url(../images/codecanyon-button.png) 0 0 no-repeat;
+}
+header form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+header form select {
+  width: 209px;
 }
 aside a.button {
   display: block;
