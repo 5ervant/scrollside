@@ -100,37 +100,37 @@
 					<td>Row selector</td>
 					<td>CSS selector</td>
 					<td>#main</td>
-					<td>CSS selector for the row's element that contains the sidebar, main content's element and the other element(s) if any. Just set to <code>.row</code> if your theme is using Bootstrap grid system.</td>
+					<td>CSS selector for the row's element that contains the sidebar, main content's element and the other element(s) if any. Set to <code>.row</code> if your theme is using Bootstrap grid system.</td>
 				</tr>
 				<tr>
 					<td>Sidebar selector</td>
 					<td>CSS selector</td>
 					<td>>:first-child</td>
-					<td>CSS selector for the sidebar that's inside of the sidebar's container or outer sidebar a.k.a. scrollside. By default, it will select the first child element of the scrollside to be the sidebar. If your sidebar doesn't have an outer container, you can just put your sidebar's selector (not the default <code>>:first-child</code> one) in both "Scrollside selector" and "Sidebar selector" fields.</td>
+					<td>CSS selector for the sidebar that's inside of the sidebar's container or outer sidebar. By default, it will select the first child element of the scrollside to be the sidebar. If your sidebar doesn't have an outer container, you can just put your sidebar's selector (not the default one) in both "Scrollside selector" and "Sidebar selector" fields.</td>
 				</tr>
 				<tr>
 					<td>Mobile width</td>
-					<td>number or <code>'true'</code> or <code>'false'</code></td>
+					<td>number or boolean</td>
 					<td>true</td>
-					<td>The max-width in pixels, of the document for mobile view where the sidebar's top-margin will set back to its original position and will start moving again when the viewport become above it. Just set to <code>true</code> for automatic mobile width or if your theme is using Bootstrap grid system, or <code>false</code> for forever moving sidebar.</td>
+					<td>The max-width (in pixels) of the document for mobile view where the sidebar's top-margin will set back to its original position and will start moving again when the viewport become above it. Just set to <code>true</code> for automatic mobile width or if your theme is using Bootstrap grid system, or <code>false</code> for forever moving sidebar.</td>
 				</tr>
 				<tr>
 					<td>Mobile animate</td>
 					<td><code>'auto'</code>, <code>'css'</code> or <code>'scroll'</code></td>
 					<td>auto</td>
-					<td>Mobile animation will only perform if the desktop view become mobile view. The default <code>auto</code> will automatically scroll back the sidebar to its original position. Setting to <code>css</code> will auto statically set back the sidebar without animation. And <code>scroll</code> is just like the <code>auto</code> but the animation will only perform when you scroll.</td>
+					<td>Mobile animation will only perform if the desktop view become in mobile. The default <code>auto</code> will auto scroll back the sidebar to its original position. Setting to <code>css</code> will auto statically set back the sidebar without animation. And <code>scroll</code> is just like the <code>auto</code> but the animation will only perform when you scroll.</td>
 				</tr>
 				<tr>
 					<td>Top padding</td>
 					<td>number</td>
 					<td>15</td>
-					<td>A non-literal top padding or an additional margin-top in pixels, of the sidebar when it's moving.</td>
+					<td>Not a literal top padding, it's an additional margin-top (in pixels) of the sidebar when it's moving.</td>
 				</tr>
 				<tr>
 					<td>Top padding decrement</td>
 					<td>negative number</td>
 					<td>-15</td>
-					<td>Must be a negative number, it's the "Top padding" decrementation if the sidebar's bottom reach the row's bottom. It's very useful if your row's element is unexpectedly increasing its height due to the reaching of the moving sidebar on its bottom.</td>
+					<td>Must be a negative number, it's the "Top padding" decrementation if the sidebar's bottom reaches the row's bottom. It's very useful if your row's element is unexpectedly increasing its height due to the reaching of the moving sidebar on its bottom.</td>
 				</tr>
 				<tr>
 					<td>Scroll duration</td>
@@ -142,7 +142,7 @@
 					<td>Mobile duration</td>
 					<td>number</td>
 					<td>2000</td>
-					<td>Milliseconds to complete the moving back to the original position of the sidebar if the desktop view become mobile view. And will only effect when the "Mobile animate" is not set to <code>css</code>.</td>
+					<td>Milliseconds to complete the moving back to the original position of the sidebar if the desktop view become mobile view. This will only effect when the "Mobile animate" is not set to <code>css</code>.</td>
 				</tr>
 			</tbody>
 		</table>
